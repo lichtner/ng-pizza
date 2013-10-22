@@ -7,7 +7,7 @@
     <meta name="author" content="">
 	<!--<link rel="shortcut icon" href="../../assets/ico/favicon.png">-->
 
-	<title>ngPizza</title>
+	<title>ng-pizza</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
@@ -38,23 +38,9 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header">Nav header</li>
-						<li><a href="#">Separated link</a></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Default</a></li>
-				<li><a href="#">Static top</a></li>
-				<li class="active"><a href="./">Fixed top</a></li>
+				<li><a href="#">Order: 0</a></li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->
@@ -62,17 +48,20 @@
 </div>
 
 <div class="container">
-	Hello {{2+2}}
+	<div ng-view></div>
 </div>
 <!-- /container -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="//localhost:35729/livereload.js"></script>
 <script src="../bower_components/jquery/jquery.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/list/ListCtrl.js"></script>
 
 </body>
 </html>

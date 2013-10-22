@@ -9,7 +9,9 @@ module.exports = function (grunt) {
 			},
 			files: [
 				'app/index.html',
-				'app/css/*.css'
+				'app/css/*.css',
+				'app/js/*',
+				'app/js/**/*'
 			]
 		}
 	});
