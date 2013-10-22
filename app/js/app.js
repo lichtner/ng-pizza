@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('pizza', ['ngRoute']);
+var app = angular.module('pizza', ['ngRoute', 'ngResource']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
