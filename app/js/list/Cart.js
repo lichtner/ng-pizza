@@ -1,6 +1,6 @@
 'use strict';
 
-app.service('Cart', function () {
+app.service('Cart', function ($rootScope) {
 	var self = {};
 
 	self.total = 0;
@@ -15,6 +15,25 @@ app.service('Cart', function () {
 		self.cart = [];
 		self.total = 0;
 	};
+
+	createPersistentProperty('cart', 'fmCart', Array);
+    createPersistentProperty('total', 'fmTotal', Number);
+
+	function createPersistentProperty(localName, storageName, Type) {
+		var json = localStorage[storageName];
+
+		self[localName] = json ? JSON.parse(json) : new Type;
+
+		$rootScope.$watch(
+			function() { return self[localName]; },
+			function(value) {
+				if (value) {
+					localStorage[storageName] = JSON.stringify(value);
+				}
+			},
+			true
+		);
+	}
 
 	return self;
 });
