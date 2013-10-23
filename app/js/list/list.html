@@ -39,16 +39,29 @@
 				Your order
 			</div>
 			<div class="panel-body">
-				<ul>
-					<li ng-repeat="pizza in cart.cart">{{pizza.name}} ({{pizza.price}} €)</li>
-				</ul>
+				<table class="table">
+					<tr ng-show="cart.cart.length">
+						<th>name</th>
+						<th>price</th>
+						<th>count</th>
+						<th>total</th>
+					</tr>
+					<tr ng-repeat="item in cart.cart">
+						<td>{{item.pizza.name}}</td>
+						<td>{{item.pizza.price}} €</td>
+						<td>{{item.count}}</td>
+						<td>{{item.count * item.pizza.price | number:2}} €</td>
+					</tr>
+					<tr ng-show="cart.cart.length">
+						<th>TOTAL</th>
+						<th></th>
+						<th></th>
+						<th>{{cart.total | number:2}} €</th>
+					</tr>
+				</table>
 			</div>
 			<div class="panel-footer">
-				<div class="pull-right">
-					<div class="total">{{cart.total}} €</div>
-				</div>
-				Total:
-				<button type="button" class="btn btn-danger"
+				<button type="button" class="btn btn-default"
 				        ng-disabled="cart.total === 0"
 				        ng-click="cart.clear()">Clear order
 				</button>
