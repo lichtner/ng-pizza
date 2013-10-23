@@ -6,7 +6,8 @@
 			</div>
 			<div class="panel-body">
 				<div ng-repeat="pizza in list">
-					<button type="button" class="btn btn-success pull-right">
+					<button type="button" ng-click="cart.add(pizza.name)"
+					        class="btn btn-success pull-right">
 						<span class="glyphicon glyphicon-plus"></span>
 						Order
 					</button>
@@ -25,8 +26,14 @@
 				Your order
 			</div>
 			<div class="panel-body">
+				<ul>
+					<li ng-repeat="item in cart.cart">{{item}}</li>
+				</ul>
 			</div>
 			<div class="panel-footer">
+				<div class="pull-right">
+					{{cart.total}}
+				</div>
 				Total:
 			</div>
 		</div>
