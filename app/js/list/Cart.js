@@ -11,5 +11,10 @@ app.service('Cart', function () {
 		self.total += pizza.price;
 	};
 
+	self.clear = function () {
+		self.cart = [];
+		self.total = 0;
+	};
+
 	return self;
 });

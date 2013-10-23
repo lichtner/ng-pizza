@@ -38,6 +38,9 @@
 					{{cart.total}} €
 				</div>
 				Total:
+				<button type="button" class="btn btn-danger"
+				        ng-disabled="cart.total === 0"
+				        ng-click="cart.clear()">Clear order</button>
 			</div>
 		</div>
 	</div>
