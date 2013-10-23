@@ -8,6 +8,12 @@ app.config(function ($routeProvider) {
 			templateUrl: 'js/list/list.html',
 			controller: 'ListCtrl'
 		})
+		.when('/about', {
+			templateUrl: 'js/nav/about.html'
+		})
+		.when('/help', {
+			templateUrl: 'js/nav/help.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

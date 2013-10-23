@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en" ng-app="pizza">
 <head>
 	<meta charset="utf-8">
@@ -24,7 +25,7 @@
 <body>
 
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,11 +37,11 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
+				<li ng-class="{active: routeIs('/')}"><a href="#">Select Pizza</a></li>
+				<li ng-class="{active: routeIs('/about')}"><a href="#/about">About</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Help</a></li>
+				<li ng-class="{active: routeIs('/help')}"><a href="#/help">Help</a></li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->
@@ -64,6 +65,7 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/list/ListCtrl.js"></script>
 <script type="text/javascript" src="js/list/Pizza.js"></script>
+<script type="text/javascript" src="js/nav/NavCtrl.js"></script>
 
 </body>
 </html>
