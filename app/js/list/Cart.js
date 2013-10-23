@@ -6,8 +6,9 @@ app.service('Cart', function () {
 	self.total = 0;
 	self.cart = [];
 	
-	self.add = function (name) {
-		self.cart.push(name);
+	self.add = function (pizza) {
+		self.cart.push(pizza);
+		self.total += pizza.price;
 	};
 
 	return self;
