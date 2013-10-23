@@ -1,5 +1,37 @@
 [
-	{"id": 1, "name": "Pizza 1"},
-	{"id": 2, "name": "Pizza 2"},
-	{"id": 3, "name": "Pizza 3"}
+	{
+		"id": 1,
+		"name": "Margherita",
+		"content": ["tomato base", "mozzarella cheese", "basil"]
+	},
+	{
+		"id": 2,
+		"name": "Prosciutto",
+		"content": ["tomato base", "mozzarella cheese", "ham"]
+	},
+	{
+		"id": 3,
+		"name": "Funghi",
+		"content": ["tomato base", "mozzarella cheese", "mushrooms"]
+	},
+	{
+		"id": 4,
+		"name": "Hawai",
+		"content": ["tomato base", "mozzarella cheese", "ham", "pineapple"]
+	},
+	{
+		"id": 5,
+		"name": "Asparagi",
+		"content": ["tomato base", "mozzarella cheese", "ham", "asparagus", "olives"]
+	},
+	{
+		"id": 6,
+		"name": "Vegetariana",
+		"content": ["tomato base", "broccoli", "artichokes", "cherry tomatoes", "corn", "olives"]
+	},
+	{
+		"id": 7,
+		"name": "Tonno",
+		"content": ["tomato base", "mozzarella cheese", "tuna", "onion", "olives"]
+	}
 ]
