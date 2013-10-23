@@ -6,5 +6,6 @@ app.controller('ListCtrl', function ($scope, Pizza, Cart) {
 	});
 
 	$scope.cart = Cart;
+	$scope.search = null;
 
 });

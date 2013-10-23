@@ -3,42 +3,49 @@
 		"id": 1,
 		"name": "Margherita",
 		"price": 3,
+		"vege": true,
 		"content": ["tomato base", "mozzarella cheese", "basil"]
 	},
 	{
 		"id": 2,
 		"name": "Prosciutto",
 		"price": 4,
+		"vege": false,
 		"content": ["tomato base", "mozzarella cheese", "ham"]
 	},
 	{
 		"id": 3,
 		"name": "Funghi",
 		"price": 4.3,
+		"vege": true,
 		"content": ["tomato base", "mozzarella cheese", "mushrooms"]
 	},
 	{
 		"id": 4,
 		"name": "Hawai",
 		"price": 4.4,
+		"vege": false,
 		"content": ["tomato base", "mozzarella cheese", "ham", "pineapple"]
 	},
 	{
 		"id": 5,
 		"name": "Asparagi",
 		"price": 4.5,
+		"vege": false,
 		"content": ["tomato base", "mozzarella cheese", "ham", "asparagus", "olives"]
 	},
 	{
 		"id": 6,
 		"name": "Vegetariana",
 		"price": 5,
+		"vege": true,
 		"content": ["tomato base", "broccoli", "artichokes", "cherry tomatoes", "corn", "olives"]
 	},
 	{
 		"id": 7,
-		"price": 5.2,
 		"name": "Tonno",
+		"price": 5.2,
+		"vege": false,
 		"content": ["tomato base", "mozzarella cheese", "tuna", "onion", "olives"]
 	}
 ]

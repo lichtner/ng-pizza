@@ -5,7 +5,13 @@
 				Select your pizza
 			</div>
 			<div class="panel-body">
-				<div ng-repeat="pizza in list">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default" ng-class="{disabled: search === null}" ng-click="search = null">All</button>
+					<button type="button" class="btn btn-default" ng-class="{disabled: search.vege === true}" ng-click="search.vege = true">Only vegetarian</button>
+					<button type="button" class="btn btn-default" ng-class="{disabled: search.vege === false}" ng-click="search.vege = false">Only with meat</button>
+				</div>
+				<hr/>
+				<div ng-repeat="pizza in list | filter: search">
 					<div class="pull-right">
 						<div class="price">{{pizza.price}} €</div>
 						<button type="button" ng-click="cart.add(pizza)"
@@ -14,7 +20,11 @@
 							Order
 						</button>
 					</div>
-					<h3>{{pizza.name}}</h3>
+					<h3>
+						{{pizza.name}}
+						<span class="label label-default" ng-show="pizza.vege">vegetarian</span>
+					</h3>
+
 					<p>
 						<span ng-repeat="item in pizza.content">{{item}}<span ng-hide="$last">, </span></span>
 					</p>
@@ -40,7 +50,8 @@
 				Total:
 				<button type="button" class="btn btn-danger"
 				        ng-disabled="cart.total === 0"
-				        ng-click="cart.clear()">Clear order</button>
+				        ng-click="cart.clear()">Clear order
+				</button>
 			</div>
 		</div>
 	</div>
