@@ -39,6 +39,7 @@
 				Your order
 			</div>
 			<div class="panel-body">
+				<p ng-hide="cart.total">Please select your pizza</p>
 				<table class="table">
 					<tr ng-show="cart.cart.length">
 						<th>name</th>
