@@ -1,6 +1,6 @@
-<div class="alert alert-warning" ng-show="cart.time">
-	<a class="close" href="#" ng-click="cart.time = 0">&times;</a>
-	<strong>Well done!</strong> Your order will be delivered in {{cart.time}} minutes.
+<div class="alert alert-warning" ng-show="order.time">
+	<a class="close" href="#" ng-click="order.time = 0">&times;</a>
+	<strong>Well done!</strong> Your order will be delivered in {{order.time}} minutes.
 </div>
 <div class="row">
 	<div class="col-md-6">
@@ -18,7 +18,7 @@
 				<div ng-repeat="pizza in list | filter: search">
 					<div class="pull-right">
 						<div class="price">{{pizza.price}} €</div>
-						<button type="button" ng-click="cart.add(pizza)"
+						<button type="button" ng-click="order.add(pizza)"
 						        class="btn btn-success">
 							<span class="glyphicon glyphicon-plus"></span>
 							Order
@@ -43,47 +43,47 @@
 				Your order
 			</div>
 			<div class="panel-body">
-				<p ng-hide="cart.total">Please select your pizza</p>
+				<p ng-hide="order.total">Please select your pizza</p>
 				<table class="table">
-					<tr ng-show="cart.cart.length">
+					<tr ng-show="order.cart.length">
 						<th>name</th>
 						<th>price</th>
 						<th>count</th>
 						<th>total</th>
 						<th></th>
 					</tr>
-					<tr ng-repeat="item in cart.cart">
+					<tr ng-repeat="item in order.cart">
 						<td>{{item.pizza.name}}</td>
 						<td>{{item.pizza.price}} €</td>
 						<td>{{item.count}}</td>
 						<td>{{item.count * item.pizza.price | number:2}} €</td>
 						<td>
-							<button type="button" ng-click="cart.remove($index)"
+							<button type="button" ng-click="order.remove($index)"
 							        class="btn btn-default btn-xs" title="remove">
 								<span class="glyphicon glyphicon-remove"></span>
 							</button>
 						</td>
 					</tr>
-					<tr ng-show="cart.cart.length">
+					<tr ng-show="order.cart.length">
 						<th>TOTAL</th>
 						<th></th>
 						<th></th>
-						<th>{{cart.total | number:2}} €</th>
+						<th>{{order.total | number:2}} €</th>
 						<th></th>
 					</tr>
 				</table>
 			</div>
 			<div class="panel-footer">
 				<button type="button" class="btn btn-default"
-				        ng-disabled="cart.total === 0"
-				        ng-click="cart.clear()">Clear order
+				        ng-disabled="order.total === 0"
+				        ng-click="order.clear()">Clear order
 				</button>
-				<button class="btn btn-primary pull-right" ng-disabled="cart.total === 0"
-				   ng-click="cart.purchase()">
+				<button class="btn btn-primary pull-right" ng-disabled="order.total === 0"
+				   ng-click="order.purchase()">
 					Purchase your pizzas
 				</button>
 			</div>
 		</div>
-		<!--<pre>{{cart |json }}</pre>-->
+		<!--<pre>{{order | json}}</pre>-->
 	</div>
 </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-app.service('Cart', function ($rootScope, $http) {
+app.service('Order', function ($rootScope, $http) {
 	var self = {};
 
 	self.total = 0;
