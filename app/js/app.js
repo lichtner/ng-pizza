@@ -5,8 +5,8 @@ var app = angular.module('pizza', ['ngRoute', 'ngResource']);
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'js/list/list.html',
-			controller: 'ListCtrl'
+			templateUrl: 'js/pizza/pizza.html',
+			controller: 'PizzaCtrl'
 		})
 		.when('/about', {
 			templateUrl: 'js/nav/about.html'

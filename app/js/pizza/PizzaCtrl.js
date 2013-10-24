@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ListCtrl', function ($scope, Pizza, Cart) {
+app.controller('PizzaCtrl', function ($scope, Pizza, Cart) {
 	Pizza.query(function (data) {
 		$scope.list = data;
 	});
