@@ -5,11 +5,11 @@ app.service('Order', function ($rootScope, $http) {
 
 	self.total = 0; // total of all ordered pizzas
 	self.time = 0;  // delivered time after purchase
-	self.cart = [];
 	self.discount = 0;
 	self.discountLevel = 5; // % level of discount
 	self.discountForTotalMoreThan = 10; // order higher than this get discountLevel
 	self.discountMessage = false;  // show discount message
+	self.cart = [];
 
 	self.add = function (pizza) {
 		self.time = 0;
