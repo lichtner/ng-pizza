@@ -8,11 +8,8 @@ app.config(function ($routeProvider) {
 			templateUrl: 'js/pizza/pizza.html',
 			controller: 'PizzaCtrl'
 		})
-		.when('/about', {
-			templateUrl: 'js/nav/about.html'
-		})
-		.when('/help', {
-			templateUrl: 'js/nav/help.html'
+		.when('/about-me', {
+			templateUrl: 'js/nav/about-me.html'
 		})
 		.otherwise({
 			redirectTo: '/'
