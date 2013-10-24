@@ -23,6 +23,11 @@ app.service('Cart', function ($rootScope) {
 		self.total += pizza.price;
 	};
 
+	self.remove = function (index) {
+		self.total -= self.cart[index].count * self.cart[index].pizza.price;
+		self.cart.splice(index, 1);
+	};
+
 	self.clear = function () {
 		self.total = 0;
 		self.cart = [];

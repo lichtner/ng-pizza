@@ -45,18 +45,26 @@
 						<th>price</th>
 						<th>count</th>
 						<th>total</th>
+						<th></th>
 					</tr>
 					<tr ng-repeat="item in cart.cart">
 						<td>{{item.pizza.name}}</td>
 						<td>{{item.pizza.price}} €</td>
 						<td>{{item.count}}</td>
 						<td>{{item.count * item.pizza.price | number:2}} €</td>
+						<td>
+							<button type="button" ng-click="cart.remove($index)"
+							        class="btn btn-default btn-xs" title="remove">
+								<span class="glyphicon glyphicon-remove"></span>
+							</button>
+						</td>
 					</tr>
 					<tr ng-show="cart.cart.length">
 						<th>TOTAL</th>
 						<th></th>
 						<th></th>
 						<th>{{cart.total | number:2}} €</th>
+						<th></th>
 					</tr>
 				</table>
 			</div>
@@ -67,5 +75,6 @@
 				</button>
 			</div>
 		</div>
+		<!--<pre>{{cart |json }}</pre>-->
 	</div>
 </div>
