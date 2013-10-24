@@ -1,3 +1,7 @@
+<div class="alert alert-warning" ng-show="cart.time">
+	<a class="close" href="#" ng-click="cart.time = 0">&times;</a>
+	<strong>Well done!</strong> Your order will be delivered in {{cart.time}} minutes.
+</div>
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel panel-primary">
@@ -73,6 +77,10 @@
 				<button type="button" class="btn btn-default"
 				        ng-disabled="cart.total === 0"
 				        ng-click="cart.clear()">Clear order
+				</button>
+				<button class="btn btn-primary pull-right" ng-disabled="cart.total === 0"
+				   ng-click="cart.purchase()">
+					Purchase your pizzas
 				</button>
 			</div>
 		</div>

@@ -1,9 +1,10 @@
 'use strict';
 
-app.service('Cart', function ($rootScope) {
+app.service('Cart', function ($rootScope, $http) {
 	var self = {};
 
 	self.total = 0;
+	self.time = 0;
 	self.cart = [];
 
 	self.add = function (pizza) {
@@ -31,6 +32,17 @@ app.service('Cart', function ($rootScope) {
 	self.clear = function () {
 		self.total = 0;
 		self.cart = [];
+	};
+
+	self.purchase = function () {
+		if (self.cart.length) {
+			$http.post('../api/purchase.json', {
+				cart: self.cart
+			}).success(function(data) {
+				self.clear();
+				self.time = data.time;
+			});
+		}
 	};
 
 	createPersistentProperty('cart', 'fmCart', Array);
