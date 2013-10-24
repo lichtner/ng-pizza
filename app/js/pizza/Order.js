@@ -36,7 +36,7 @@ app.service('Order', function ($rootScope, $http) {
 
 	self.purchase = function () {
 		if (self.cart.length) {
-			$http.post('../api/purchase.json', {
+			$http.post('api/purchase.json', {
 				cart: self.cart
 			}).success(function(data) {
 				self.clear();
