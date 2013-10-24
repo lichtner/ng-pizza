@@ -3,8 +3,8 @@
 	<strong>Well done!</strong> Your order will be delivered in {{order.time}} minutes.
 </div>
 <div class="row">
-	<div class="col-md-6">
-		<div class="panel panel-primary">
+	<div class="col-sm-6">
+		<div class="panel panel-success">
 			<div class="panel-heading">
 				Select your pizza
 			</div>
@@ -26,7 +26,7 @@
 					</div>
 					<h3>
 						{{pizza.name}}
-						<span class="label label-default" ng-show="pizza.vege">vegetarian</span>
+						<span class="label label-warning" ng-show="pizza.vege">vegetarian</span>
 					</h3>
 
 					<p>
@@ -37,13 +37,17 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-6">
-		<div class="panel panel-success">
+	<div class="col-sm-6">
+		<div class="panel panel-info">
 			<div class="panel-heading">
 				Your order
 			</div>
 			<div class="panel-body">
-				<p ng-hide="order.total">Please select your pizza</p>
+				<p ng-hide="order.total">
+					Please select your pizza.<br/>
+					Discount {{order.discountLevel}}% for order more than
+					{{order.discountForTotalMoreThan}}€.
+				</p>
 				<table class="table">
 					<tr ng-show="order.cart.length">
 						<th>name</th>
@@ -64,14 +68,25 @@
 							</button>
 						</td>
 					</tr>
+					<tr ng-show="order.cart.length && order.discount > 0">
+						<th>Discount</th>
+						<th></th>
+						<th></th>
+						<th>{{order.discount}}%</th>
+						<th></th>
+					</tr>
 					<tr ng-show="order.cart.length">
 						<th>TOTAL</th>
 						<th></th>
 						<th></th>
-						<th>{{order.total | number:2}} €</th>
+						<th>{{order.total * (100 - order.discount)/100 | number:2}} €</th>
 						<th></th>
 					</tr>
 				</table>
+				<div class="alert alert-warning" ng-show="order.discountMessage">
+					<a class="close" href="#" ng-click="order.discountMessage = false">&times;</a>
+					<strong>Congrats!</strong> You've got {{order.discount}}% discount!
+				</div>
 			</div>
 			<div class="panel-footer">
 				<button type="button" class="btn btn-default"
