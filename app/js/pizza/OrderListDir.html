@@ -1,0 +1,62 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		Your order
+	</div>
+	<div class="panel-body">
+		<p ng-hide="order.total">
+			Please select your pizza.<br/>
+			Discount {{order.discountLevel}}% for order more than
+			{{order.discountForTotalMoreThan}}€.
+		</p>
+		<table class="table">
+			<tr ng-show="order.cart.length">
+				<th>name</th>
+				<th>price</th>
+				<th>count</th>
+				<th>total</th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="item in order.cart">
+				<td>{{item.pizza.name}}</td>
+				<td>{{item.pizza.price}} €</td>
+				<td>{{item.count}}</td>
+				<td>{{item.count * item.pizza.price | number:2}} €</td>
+				<td>
+					<button type="button" ng-click="order.remove($index)"
+					        class="btn btn-default btn-xs" title="remove">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</td>
+			</tr>
+			<tr ng-show="order.cart.length && order.discount > 0">
+				<th>Discount</th>
+				<th></th>
+				<th></th>
+				<th>{{order.discount}}%</th>
+				<th></th>
+			</tr>
+			<tr ng-show="order.cart.length">
+				<th>TOTAL</th>
+				<th></th>
+				<th></th>
+				<th>{{order.total * (100 - order.discount)/100 | number:2}} €</th>
+				<th></th>
+			</tr>
+		</table>
+		<div class="alert alert-warning" ng-show="order.discountMessage">
+			<a class="close" href="#" ng-click="order.discountMessage = false">&times;</a>
+			<strong>Congrats!</strong> You've got {{order.discount}}% discount!
+		</div>
+	</div>
+	<div class="panel-footer">
+		<button type="button" class="btn btn-default"
+		        ng-disabled="order.total === 0"
+		        ng-click="order.clear()">Clear order
+		</button>
+		<button class="btn btn-primary pull-right" ng-disabled="order.total === 0"
+		        ng-click="order.purchase()">
+			Purchase your pizzas
+		</button>
+	</div>
+</div>
+<!--<pre>{{order | json}}</pre>-->
