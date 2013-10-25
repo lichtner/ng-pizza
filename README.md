@@ -1,10 +1,10 @@
-# PIZZA
+# ng-pizza
 
 Order pizza online. Sample angular.js application.
 
 Live demo is here [pizza.licht.sk](http://pizza.licht.sk)
 
-## INSTALL
+## Install
 
 For js and css assets install bower.
 
