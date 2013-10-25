@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownAnchorTarget -->
 <div class="panel panel-info">
 	<div class="panel-heading">
 		Your order
@@ -53,10 +54,9 @@
 		        ng-disabled="order.total === 0"
 		        ng-click="order.clear()">Clear order
 		</button>
-		<button class="btn btn-primary pull-right" ng-disabled="order.total === 0"
-		        ng-click="order.purchase()">
+		<a href="#/purchase" ng-disabled="order.total === 0" class="btn btn-primary pull-right">
 			Purchase your pizzas
-		</button>
+		</a>
 	</div>
 </div>
 <!--<pre>{{order | json}}</pre>-->

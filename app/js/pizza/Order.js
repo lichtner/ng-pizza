@@ -10,6 +10,7 @@ app.service('Order', function ($rootScope, $http) {
 	self.discountForTotalMoreThan = 10; // order higher than this get discountLevel
 	self.discountMessage = false;  // show discount message
 	self.cart = [];
+	self.user = {};
 
 	self.add = function (pizza) {
 		self.time = 0;
@@ -55,6 +56,7 @@ app.service('Order', function ($rootScope, $http) {
 	self.purchase = function () {
 		if (self.cart.length) {
 			$http.post('api/purchase.json', {
+				user: self.user,
 				cart: self.cart
 			}).success(function(data) {
 				self.clear();
